@@ -52,7 +52,8 @@ jobs:
     run: |
      sudo dpkg --add-architecture i386
      sudo apt-get -qq update
-     sudo apt-get install --allow-downgrades g++-multilib libsdl2-dev:i386 zlib1g-dev:i386
+     sudo apt install -y --allow-downgrades libpcre2-8-0=10.34-7
+     sudo apt-get install g++-multilib libsdl2-dev:i386 zlib1g-dev:i386
 
   - name: Prepare
     run: cmake -DCMAKE_C_FLAGS="-m32" -DCMAKE_CXX_FLAGS="-m32" -B build/x86-linux
